@@ -86,7 +86,7 @@ def wav_to_mp3(wav_data, sample_rate=22050):
 
 class handler(BaseHTTPRequestHandler):
     def do_POST(self):
-        if self.path != '/api/tts':
+        if self.path not in ('/api/tts', '/api'):
             self.send_error(404, 'Not Found')
             return
 
